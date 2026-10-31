@@ -1,6 +1,13 @@
+logging:
+  level:
+    root: info
+
 spring:
   application:
     name: daylog
+
+  config:
+    import: classpath:jwtconfig-local.yaml
 
   datasource:
     driver-class-name: org.h2.Driver

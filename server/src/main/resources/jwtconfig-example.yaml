@@ -1,0 +1,4 @@
+jwt:
+  secretKey: secretkey-secretkey-secretkey-secretkey-secretkey-secretkey
+  accessTokenExpireTime: 1800000 # 30분 30 * 60 * 1000 = 1800000
+  refreshTokenExpireTime: 1209600000 # 14일 14 * 24 * 60 * 60 * 1000 = 1209600000
