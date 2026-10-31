@@ -1,7 +1,7 @@
 package com.haloomin.daylog.common.entity;
 
-import com.haloomin.daylog.common.exception.AlreadySoftDeletedException;
-import com.haloomin.daylog.common.exception.NotSoftDeletedException;
+import com.haloomin.daylog.common.exception.service.AlreadySoftDeletedException;
+import com.haloomin.daylog.common.exception.service.NotSoftDeletedException;
 import jakarta.persistence.Column;
 import jakarta.persistence.EntityListeners;
 import jakarta.persistence.MappedSuperclass;

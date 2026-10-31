@@ -75,5 +75,11 @@ out/
 !**/src/main/**/out/
 !**/src/test/**/out/
 
+application*.yaml
+!application-example.yaml
+
+jwtconfig*.yaml
+!jwtconfig-example.yaml
+
 # ===== DOCS (docs) =====
 .obsidian/

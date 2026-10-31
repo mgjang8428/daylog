@@ -43,6 +43,10 @@ dependencies {
 	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'
 	testImplementation 'org.springframework.boot:spring-boot-starter-security-test'
 
+//	oauth 2
+	implementation 'org.springframework.boot:spring-boot-starter-security-oauth2-resource-server'
+	testImplementation 'org.springframework.boot:spring-boot-starter-security-oauth2-resource-server-test'
+
 //	restdocs
 	testImplementation 'org.springframework.boot:spring-boot-starter-restdocs'
 	testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
