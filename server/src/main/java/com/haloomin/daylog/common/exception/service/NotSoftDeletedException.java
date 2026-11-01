@@ -4,6 +4,9 @@ import com.haloomin.daylog.common.ServiceErrorCode;
 import com.haloomin.daylog.common.exception.root.ServiceException;
 
 public class NotSoftDeletedException extends ServiceException {
+    /**
+     * E000003
+     */
     public NotSoftDeletedException() {
         super(ServiceErrorCode.E000003);
     }

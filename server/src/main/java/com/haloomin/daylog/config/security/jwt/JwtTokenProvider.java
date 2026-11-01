@@ -39,6 +39,7 @@ public class JwtTokenProvider {
      * @return accessToken
      */
     public String createAccessToken(MemberAccount account, Instant now) {
+        // access 토큰 생성
         JwtClaimsSet claims = baseClaims(
                 account,
                 JwtConsts.TYPE_ACCESS,
@@ -61,8 +62,11 @@ public class JwtTokenProvider {
             String familyId,
             Instant now
     ) {
+        // jti: JWT ID 생성
         String jti = UUID.randomUUID().toString();
+        // 만료 시간 지정
         Instant expiresAt = now.plusMillis(jwtProperties.refreshTokenExpireTime());
+        // refreshToken 생성, DB 저장 데이터 지정
         JwtClaimsSet claims = baseClaims(
                 account,
                 JwtConsts.TYPE_REFRESH,
@@ -83,23 +87,25 @@ public class JwtTokenProvider {
      */
     public ParsedRefreshToken parseRefreshToken(String refreshToken) {
         Jwt jwt;
-
+        // refreshToken 디코드
         try {
             jwt = refreshTokenDecoder.decode(refreshToken);
         } catch (JwtException e) {
             throw new InvalidRefreshTokenException();
         }
-
+        // type이 refreshToken이 아닐경우
         if (!JwtConsts.TYPE_REFRESH.equals(jwt.getClaimAsString(JwtConsts.CLAIM_TYPE))) {
             throw new InvalidRefreshTokenException();
         }
+        // jti가 없을 경우
         if (jwt.getId() == null) {
             throw new InvalidRefreshTokenException();
         }
+        // familyID가 없을경우
         if (jwt.getClaimAsString(JwtConsts.CLAIM_FAMILY_ID) == null) {
             throw new InvalidRefreshTokenException();
         }
-
+        // 파싱된 refreshToken 리턴
         return new ParsedRefreshToken(
                 jwt.getId(),
                 jwt.getClaimAsString(JwtConsts.CLAIM_FAMILY_ID),

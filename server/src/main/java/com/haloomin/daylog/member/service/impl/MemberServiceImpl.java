@@ -75,7 +75,7 @@ public class MemberServiceImpl implements MemberService {
     }
 
     /**
-     * Member 정보 검증
+     * SignUp Member 정보 검증
      *
      * @param command 가입 정보
      */

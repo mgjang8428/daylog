@@ -4,6 +4,9 @@ import com.haloomin.daylog.common.ServiceErrorCode;
 import com.haloomin.daylog.common.exception.root.ServiceException;
 
 public class PasswordConfirmFailedException extends ServiceException {
+    /**
+     * E100007
+     */
     public PasswordConfirmFailedException() {
         super(ServiceErrorCode.E100007);
     }
