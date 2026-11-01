@@ -39,7 +39,7 @@ public class MemberAccountController {
     }
 
     @PostMapping("/signout")
-    public ResponseEntity<ResponseV1<Void>> signout(@Valid @RequestBody AccountSignOutRequestV1 request) {
+    public ResponseEntity<ResponseV1<Void>> signOut(@Valid @RequestBody AccountSignOutRequestV1 request) {
         memberService.signOut(request.toCommand());
         return ResponseEntity.ok(ResponseV1.success());
     }
