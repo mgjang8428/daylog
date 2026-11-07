@@ -5,10 +5,8 @@ import {
 	TOKEN_TYPE
 } from "@/model/common/consts"
 import tokenStorage from "@/model/store/tokenStorage"
-import AccountService from "@/model/v1/account/service/accountService"
+import { accountService } from "@/model/v1/account/service/accountService"
 import { AxiosError, AxiosResponse, InternalAxiosRequestConfig, create as axiosCreate } from "axios"
-
-const accountService: AccountService = new AccountService()
 
 // accessToken 재발급 중인지 판단
 let isRefreshing = false

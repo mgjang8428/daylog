@@ -18,7 +18,7 @@ import ReissueRequest from "@/model/v1/account/dto/request/reissueRequest"
 import SignoutRequest from "@/model/v1/account/dto/request/signoutRequest"
 import { AxiosResponse } from "axios"
 
-export default class AccountService {
+class AccountService {
 	/**
 	 * 회원가입
 	 * @param request 회원가입 요청 dto
@@ -117,3 +117,5 @@ export default class AccountService {
 		await tokenStorage.remove(REFRESH_TOKEN_STORED_KEY)
 	}
 }
+
+export const accountService = new AccountService()

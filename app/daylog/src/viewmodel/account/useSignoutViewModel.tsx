@@ -1,8 +1,6 @@
 import { useSigninStore } from "@/model/store/signinStore"
-import AccountService from "@/model/v1/account/service/accountService"
+import { accountService } from "@/model/v1/account/service/accountService"
 import { useState } from "react"
-
-const accountService = new AccountService()
 
 export default function useSignoutViewModel() {
 	const [isProceedSignout, setIsProceedSignout] = useState(false)

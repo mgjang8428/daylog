@@ -6,13 +6,11 @@ import {
 	TimezoneSelection
 } from "@/model/util/timezone"
 import SignupRequest from "@/model/v1/account/dto/request/signupRequest"
-import AccountService from "@/model/v1/account/service/accountService"
+import { accountService } from "@/model/v1/account/service/accountService"
 import ResponseV1 from "@/model/v1/dto/responseV1"
 import { AxiosError } from "axios"
 import { router } from "expo-router"
 import { useState } from "react"
-
-const accountService = new AccountService()
 
 export default function useSignupViewModel() {
 	const [isProceedSignup, setIsProceedSignup] = useState(false)
