@@ -1,0 +1,22 @@
+# 실험적 삼항연산자
+experimentalTernaries: false
+# 실험적 비교, 산술연산자 정렬 <end | start>
+experimentalOperatorPosition: "start"
+
+printWidth: 100
+
+tabWidth: 4
+useTabs: true
+
+semi: false
+singleQuote: false
+# quoteProps: "<as-needed|consistent|preserve>"
+quoteProps: as-needed
+jsxSingleQuote: false
+# 쉼표 추가 <none | es5 | all>
+trailingComma: "none"
+bracketSpacing: true
+# <"preserve" | "collapse">
+objectWrap: "preserve"
+bracketSameLine: false
+arrowParens: "always"

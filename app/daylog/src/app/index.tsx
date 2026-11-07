@@ -1,17 +1,25 @@
-import { Text, View, StyleSheet } from "react-native";
+import { router } from "expo-router"
+import { Button, Image, View } from "react-native"
 
 export default function Index() {
-  return (
-    <View style={styles.container}>
-      <Text>Edit src/app/index.tsx to edit this screen.</Text>
-    </View>
-  );
+	return (
+		<View>
+			<Image
+				source={require("@assets/images/daylog_logo.png")}
+				style={{ width: 300, height: 300 }}
+			/>
+			<Button
+				title="로그인"
+				onPress={() => {
+					router.push("/signin")
+				}}
+			/>
+			<Button
+				title="가입"
+				onPress={() => {
+					router.push("/signup")
+				}}
+			/>
+		</View>
+	)
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
